@@ -1,0 +1,25 @@
+{
+    //wolfinabox's PyInstaller Build Task
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    //Available Variables:
+    // ${workspaceRoot}: the root folder of the team
+    // ${file}: the current opened file
+    // ${fileBasename}: the current opened file's basename
+    // ${fileDirname}: the current opened file's dirname
+    // ${fileExtname}: the current opened file's extension
+    // ${cwd}: the current working directory of the spawned process
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "PyInstaller Build",
+            "type": "shell",
+            "command": "${workspaceFolder}/env/scripts/pyinstaller.exe -F --onefile --noupx './Volume Fixer.spec'",
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        }
+    ]
+}
