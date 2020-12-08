@@ -1,5 +1,5 @@
 # Windows Mic Volume Locker
-A tool to "lock" the mic volume in Windows, since apparently anyone and their mom can change it.
+A tool to "lock" the mic volume in Windows, since apparently everyone and their mom can change it.
 
 It's been a longrunning problem that some games and apps seemingly change the default mic volume at random, often resulting in annoyance and bleeding from the eardrums of anyone in a call with them.
 
@@ -7,3 +7,4 @@ This tool serves to fix that. While there's no way to officially "lock" the mic 
 
 To use, download a [release](https://github.com/wolfinabox/Windows-Mic-Volume-Locker/releases), and run it. To change the "locked" volume (default 75%), right click the taskbar icon, choose "Change Volume", and enter your desired volume percentage in the popup window. After that, it's pretty much set and forget
 
+This tool uses [NirCmd](https://www.nirsoft.net/utils/nircmd.html) to change the volume. This is packed into the releases, but not included in this repository. If you want to run this from source, you need to download NirCmd and place (at least) nircmdc.exe in the resources directory
