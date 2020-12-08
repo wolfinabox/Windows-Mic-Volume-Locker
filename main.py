@@ -32,6 +32,17 @@ def _on_change_vol_click(systray):
 
     root.destroy()
 
+def on_change_time_click(systray):
+    global CONFIG
+    root=tk.Tk()
+    root.overrideredirect(1)
+    root.withdraw()
+    tmp=tkinter.simpledialog.askfloat(title="Change Time Between Runs",
+                                  prompt="Time between volume checks (in seconds):",minvalue=0,maxvalue=5,initialvalue=CONFIG['time_between_runs'])
+    if tmp is not None:
+        CONFIG['time_between_runs']=tmp
+        save_config()
+
 def load_config():
     global CONFIG
     if not os.path.exists(CONFIG_PATH):
@@ -47,7 +58,7 @@ def save_config():
         json.dump(CONFIG,f)
 
 load_config()
-menu_options = (('Change Volume',None, _on_change_vol_click),)
+menu_options = (('Change Volume...',None, _on_change_vol_click),('Change Vol. Check Time...',None, on_change_time_click))
 sys_tray=SysTrayIcon(os.path.join(resource_dir,'icon.ico'),'Mic Volume Fixer',menu_options,on_quit=_on_quit)
 sys_tray.start()
 
@@ -61,5 +72,5 @@ while not STOP:
     end=time.time()
     sleep_time=CONFIG['time_between_runs']-(end-start)
     if sleep_time>0:
-        # print(f'Sleeping {sleep_time}')
+        # print(f'Sleeping {round(sleep_time,2)}s')
         time.sleep(sleep_time)
