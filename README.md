@@ -1,4 +1,8 @@
-# Windows Mic Volume Locker
+## This project is deprecated, and won't be maintained.
+While it _probably_ still works, I would highly recommend using [volume-locker](https://github.com/felipecrs/volume-locker) by [@felipecrs](https://github.com/felipecrs) instead.
+
+# Original readme:
+## Windows Mic Volume Locker
 A tool to "lock" the mic volume in Windows, since apparently everyone and their mom can change it.
 
 It's been a longrunning problem that some games and apps seemingly change the default mic volume at random, often resulting in annoyance and bleeding from the eardrums of anyone in a call with them.
